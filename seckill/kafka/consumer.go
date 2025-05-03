@@ -24,7 +24,6 @@ func ConsumeOrderMessages(handler OrderHandlerFunc) {
 			continue
 		}
 
-		// 假设你使用 JSON 传输
 		var msg model.OrderMessage
 		if err := json.Unmarshal(m.Value, &msg); err != nil {
 			log.Println("消息反序列化失败:", err)
